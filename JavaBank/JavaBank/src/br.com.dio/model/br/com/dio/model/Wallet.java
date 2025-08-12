@@ -40,9 +40,6 @@ public abstract class Wallet {
         this.money.addAll(money);
     }
 
-    // Método abstrato para adicionar histórico ao dinheiro
-    // protected abstract void addHistoryToMoney(M moneyItem, MoneyAudit history);
-
     protected abstract Object addHistory(MoneyAudit history);
 
     public List<Money> reduceMoney(final long amount) {

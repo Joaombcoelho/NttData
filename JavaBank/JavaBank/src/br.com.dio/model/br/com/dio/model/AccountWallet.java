@@ -66,4 +66,14 @@ public class AccountWallet extends Wallet {
 
         throw new UnsupportedOperationException("Unimplemented method 'getService'");
     }
+
+    public Collection<AccountWallet> getPix() {
+
+        throw new UnsupportedOperationException("Unimplemented method 'getPix'");
+    }
+
+    public long getBalance() {
+
+        throw new UnsupportedOperationException("Unimplemented method 'getBalance'");
+    }
 }
