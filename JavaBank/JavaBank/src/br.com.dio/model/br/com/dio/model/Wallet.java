@@ -67,4 +67,17 @@ public abstract class Wallet {
 
         throw new UnsupportedOperationException("Unimplemented method 'getHistoryFromMoney'");
     }
+
+    public static void remove(InvestmentWallet wallet) {
+
+        throw new UnsupportedOperationException("Unimplemented method 'remove'");
+    }
+
+    public static Stream<InvestmentWallet> stream() {
+
+        throw new UnsupportedOperationException("Unimplemented method 'stream'");
+    }
+
+    public abstract List<Investment> getPix();
+
 }

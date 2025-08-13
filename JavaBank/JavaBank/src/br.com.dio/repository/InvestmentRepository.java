@@ -1,73 +1,118 @@
-package br.com.dio.repository;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+import javax.management.InstanceNotFoundException;
 import br.com.dio.model.AccountWallet;
 import br.com.dio.model.Investment;
 import br.com.dio.model.InvestmentWallet;
+import br.com.dio.model.Wallet;
 
 public class InvestmentRepository {
+
     private long nextId;
     private final List<Investment> investments = new ArrayList<>();
-    private final List<InvestmentWallet> Wallet = new ArrayList<>();
+    private final List<InvestmentWallet> wallet = new ArrayList<>();
 
-    public Investment create(final long tax, final long daysToRescue, final long initialFounds) {
+    public Investment create(final long tax, final long initialFunds) {
         this.nextId++;
-        var investment = new Investment(this.nextId, tax, initialFounds);
+        var investment = new Investment(this.nextId, tax, initialFunds);
         investments.add(investment);
         return investment;
     }
 
-    public InvestmentWallet initInvestments(final AccountWallet account, final long id) {
-
-        var accountInUse = wallets.stream().map(InvestmentWallet::getAccount.toList());
-        if (accountInUse.contains(account)) {
-            throw new IllegalArgumentException("A conta já possui uma carteira de investimento");
+    public void initInvestments(final AccountWallet account, final long id) throws InstanceNotFoundException {
+        var accountsInUse = wallet.stream()
+                .map(InvestmentWallet::getAccount)
+                .toList();
+        if (accountsInUse.contains(account)) {
+            throw new AccountwithInvestmentsException("A conta já possui uma carteira de investimento");
         }
-    }
-
-    var Investiments = findById(id);
-
-    checkFundsForTransaction(account, investment.initialFounds());
-        var wallet = new InvestmentWallet(account, investment.initialFounds());
-        wallet.add(wallets);
-        return wallet;
 
     }
+
+    // void checkFundsForTransaction(account, long investment.initialFunds()){;
+    // var wallet = new InvestmentWallet(investment, account,
+    // investment.initialFunds());
+    // wallets.add(wallet);
+    // return wallet;
+
+    // }
 
     public InvestmentWallet deposit(final String pix, final long funds) {
         var wallet = findWalletByAccountPix(pix);
-        wallet.addMoney(wallet.getAccount().reduceMoney(funds), wallet.getService(), "Investimento");
-        return wallet;
+        ((Wallet) wallet).addMoney(((InvestmentWallet) wallet).getAccount().reduceMoney(funds),
+                wallet.getService(), "Investimento");
+        return (InvestmentWallet) wallet;
     }
 
     public InvestmentWallet withdraw(final String pix, final long funds) {
         var wallet = findWalletByAccountPix(pix);
-        checkFundsForTransaction(wallet, funds);
-        wallet.getAccount().addMoney(wallet.reduceMoney(funds), wallet.getService(), "Retirada de Investimento");
-        if (wallet.getFunds() == 0) {
-            wallets.remove(wallet);
-            return wallet;
+        checkFundsForTransaction();
+        ((InvestmentWallet) wallet).getAccount().addMoney(((Wallet) wallet).reduceMoney(funds),
+                wallet.getService(), "Retirada de Investimento");
+        if (((Wallet) wallet).getFounds() == 0) {
+            Wallet.remove(wallet);
         }
+        return (InvestmentWallet) wallet;
     }
 
-    public void updateAmount(final Long percent) {
-        var amount = getFounds() * percent / 100;
+    private void checkFundsForTransaction() {
+
+        throw new UnsupportedOperationException("Unimplemented method 'checkFundsForTransaction'");
     }
 
-    public Investment findById(final Long id) {
-        return Investments.stream().filter(a -> a.id() == id)
-                .findFirst().orElseThrow(() -> new InvestmentsNotFoundException("O Investimento não foi encontrada"));
+    public void updateAmount(final long percent) {
     }
 
-    public InvestmentWallet findWalletByAccountPix(final string pix) {
-        return wallets.stream().filter(wallet -> wallet.getAccount().getPix().contains(pix)
-                .findFirst().orElseThrow(() -> new walletNotFoundException("A carteira não foi encontrada")));
+    public Investment findById(final Long id) throws InstanceNotFoundException {
+        return investments.stream().filter(a -> a.id() == id)
+                .findFirst().orElseThrow(() -> new InstanceNotFoundException("O Investimento não foi encontrada"));
+    }
+
+    public InvestmentWallet findWalletByAccountPix(final String pix) {
+        return wallet.stream()
+                .filter(wallet -> wallet.getAccount().getPix().contains(pix))
+                .findFirst()
+                .orElseThrow(() -> new WalletNotFoundsException("A carteira não foi encontrada"));
     }
 
     public List<InvestmentWallet> listWallets() {
-        return this.Wallet;
+        return this.wallet;
     }
 
     public List<Investment> list() {
         return this.investments;
+    }
+
+    public void updateAmount() {
+
+        throw new InvestmentNotFoundsException("Unimplemented method 'updateAmount'");
+    }
+
+    public void createInvestment(Scanner scanner) {
+
+        throw new InvestmentNotFoundsException("Unimplemented method 'createInvestment'");
+    }
+
+    public void createwalletInvestment() {
+
+        throw new UnsupportedOperationException("Unimplemented method 'createwalletInvestment'");
+    }
+
+    public void makeInvestment() {
+
+        throw new UnsupportedOperationException("Unimplemented method 'makeInvestment'");
+    }
+
+    public void invest() {
+
+        throw new UnsupportedOperationException("Unimplemented method 'invest'");
+    }
+
+    public void withdrawInvestment() {
+
+        throw new UnsupportedOperationException("Unimplemented method 'withdrawInvestment'");
     }
 }

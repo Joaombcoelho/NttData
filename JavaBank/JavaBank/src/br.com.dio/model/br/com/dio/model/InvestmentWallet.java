@@ -14,13 +14,13 @@ public abstract class InvestmentWallet extends Wallet {
     private final Investment investment;
     private final AccountWallet account;
 
-    protected abstract BankService getService();
+    public abstract BankService getService();
 
     public InvestmentWallet(Object service, Investment investment, AccountWallet account, final long amount) {
         super(INVESTMENT);
         this.investment = investment;
         this.account = account;
-        addMoney(money, ((InvestmentWallet) account.reduceMoney(amount)).getService(), "Intestimento");
+        addMoney(money, ((InvestmentWallet) account.reduceMoney(amount)).getService(), "Investimento");
     }
 
     public void updateAmount(final long percent) {
@@ -29,5 +29,7 @@ public abstract class InvestmentWallet extends Wallet {
         var money = Stream.generate(() -> new Money(history)).limit(amount).toList();
         this.money.addAll(money);
     }
+
+    public abstract Wallet getAccount();
 
 }

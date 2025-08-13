@@ -1,8 +1,7 @@
 package br.com.dio.model;
 
 public record Investment(
-        long id,
-        long tax,
-        long daysToRescue,
-        long initialFunds) {
+                long id,
+                long tax,
+                long initialFunds) {
 }

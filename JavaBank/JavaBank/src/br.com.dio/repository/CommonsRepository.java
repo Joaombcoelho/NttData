@@ -1,16 +1,14 @@
-package br.com.dio.repository;
 
 import java.util.List;
 import java.util.UUID;
-
-import lombok.NoArgsConstructor;
+import java.util.stream.Stream;
 
 import static br.com.dio.model.BankService.ACCOUNT;
-import static lombok.AccessLevel.PRIVATE;
-
 import java.time.OffsetDateTime;
 
-import br.com.dio.model.AccountWallet;
+import br.com.dio.model.Money;
+import br.com.dio.model.MoneyAudit;
+import br.com.dio.model.Wallet;
 
 public final class CommonsRepository {
     public static void checkFundsForTransaction(final Wallet source, final long amount) {
@@ -19,8 +17,8 @@ public final class CommonsRepository {
         }
     }
 
-    public static List<Money> generateMoney(final UUID transactionId, final long founds, final string description) {
-        var history = new MoneyAudit(transactionId, ACCOUNT, description, OffsetDateTime.now);
+    public static List<Money> generateMoney(final UUID transactionId, final long founds, final String description) {
+        var history = new MoneyAudit(transactionId, ACCOUNT, description, OffsetDateTime.now());
         return Stream.generate(() -> new Money(history))
                 .limit(founds)
                 .toList();

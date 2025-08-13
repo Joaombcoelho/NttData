@@ -4,18 +4,20 @@ import br.com.dio.model.Getter;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import javax.security.auth.login.AccountNotFoundException;
 
 @Getter
 public class AccountRepository {
-    private final List<AccountWallet> accounts = new ArrayList<>();
+    private final static List<AccountWallet> accounts = new ArrayList<>();
 
-    public AccountWallet create(final List<String> pix, final long initialFunds) {
+    public static AccountWallet create(Object pix2, long amouth) {
         List<AccountWallet> pixInUse = accounts.stream()
                 .flatMap(a -> a.getPix().stream())
                 .toList();
 
+        Object pix;
         for (var p : pix) {
             if (pixInUse.contains(p)) {
                 throw new PixInUseException("A chave PIX " + p + " já está em uso.");
@@ -50,7 +52,7 @@ public class AccountRepository {
         target.addMoney(amount, message);
     }
 
-    public AccountWallet findByPix(final String pix) throws AccountNotFoundException {
+    public static AccountWallet findByPix(final String pix) throws AccountNotFoundException {
         return accounts.stream()
                 .filter(a -> a.getPix().contains(pix))
                 .findFirst()
@@ -65,5 +67,30 @@ public class AccountRepository {
         if (account.getBalance() < amount) {
             throw new IllegalArgumentException("Saldo insuficiente para a transação.");
         }
+    }
+
+    public void createAccount() {
+
+        throw new UnsupportedOperationException("Unimplemented method 'createAccount'");
+    }
+
+    public void deposit() {
+
+        throw new UnsupportedOperationException("Unimplemented method 'deposit'");
+    }
+
+    public void withdraw() {
+
+        throw new UnsupportedOperationException("Unimplemented method 'withdraw'");
+    }
+
+    public void transferToAccount() {
+
+        throw new UnsupportedOperationException("Unimplemented method 'transferToAccount'");
+    }
+
+    public void checkHistory() {
+
+        throw new UnsupportedOperationException("Unimplemented method 'checkHistory'");
     }
 }

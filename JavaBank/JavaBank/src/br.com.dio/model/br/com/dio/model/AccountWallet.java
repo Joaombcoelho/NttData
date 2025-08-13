@@ -62,12 +62,12 @@ public class AccountWallet extends Wallet {
     }
 
     @Override
-    protected BankService getService() {
+    public BankService getService() {
 
         throw new UnsupportedOperationException("Unimplemented method 'getService'");
     }
 
-    public Collection<AccountWallet> getPix() {
+    public List getPix() {
 
         throw new UnsupportedOperationException("Unimplemented method 'getPix'");
     }
