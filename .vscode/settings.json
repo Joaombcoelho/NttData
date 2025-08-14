@@ -1,0 +1,9 @@
+{
+    "java.project.sourcePaths": [
+        "JavaBank\\JavaBank\\src",
+        "JavaBank\\JavaBank\\src\\br.com.dio\\exception",
+        "JavaBank\\JavaBank\\src\\br.com.dio\\model",
+        "JavaBank\\JavaBank\\src\\br.com.dio\\repository"
+    ],
+    "java.project.referencedLibraries": []
+}

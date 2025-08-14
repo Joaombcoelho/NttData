@@ -56,7 +56,7 @@ public class AccountWallet extends Wallet {
     }
 
     @Override
-    protected Collection<Money> getHistory() {
+    public Collection<Money> getHistory() {
 
         throw new UnsupportedOperationException("Unimplemented method 'getHistory'");
     }
@@ -75,5 +75,20 @@ public class AccountWallet extends Wallet {
     public long getBalance() {
 
         throw new UnsupportedOperationException("Unimplemented method 'getBalance'");
+    }
+
+    public boolean transfer(AccountWallet targetAccount, long amount) {
+
+        throw new UnsupportedOperationException("Unimplemented method 'transfer'");
+    }
+
+    public void deposit(long amount) {
+
+        throw new UnsupportedOperationException("Unimplemented method 'deposit'");
+    }
+
+    public boolean withdraw(long amount) {
+
+        throw new UnsupportedOperationException("Unimplemented method 'withdraw'");
     }
 }

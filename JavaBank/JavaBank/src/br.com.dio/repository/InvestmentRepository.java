@@ -11,13 +11,13 @@ import br.com.dio.model.Wallet;
 
 public class InvestmentRepository {
 
-    private long nextId;
-    private final List<Investment> investments = new ArrayList<>();
+    private static long nextId;
+    private final static List<Investment> investments = new ArrayList<>();
     private final List<InvestmentWallet> wallet = new ArrayList<>();
 
-    public Investment create(final long tax, final long initialFunds) {
-        this.nextId++;
-        var investment = new Investment(this.nextId, tax, initialFunds);
+    public static Investment create(final List<String> tax, final long initialFunds) {
+        nextId++;
+        var investment = new Investment();
         investments.add(investment);
         return investment;
     }
@@ -96,7 +96,7 @@ public class InvestmentRepository {
         throw new InvestmentNotFoundsException("Unimplemented method 'createInvestment'");
     }
 
-    public void createwalletInvestment() {
+    public void createWalletInvestment() {
 
         throw new UnsupportedOperationException("Unimplemented method 'createwalletInvestment'");
     }
@@ -115,4 +115,14 @@ public class InvestmentRepository {
 
         throw new UnsupportedOperationException("Unimplemented method 'withdrawInvestment'");
     }
+
+    public static Investment create(double tax, long initialFunds) {
+
+        throw new UnsupportedOperationException("Unimplemented method 'create'");
+    }
+
+    // public static Investment create(List<String> tax, long initialFunds) {
+
+    // throw new UnsupportedOperationException("Unimplemented method 'create'");
+    // }
 }

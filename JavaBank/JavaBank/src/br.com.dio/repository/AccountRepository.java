@@ -4,8 +4,6 @@ import br.com.dio.model.Getter;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
-
 import javax.security.auth.login.AccountNotFoundException;
 
 @Getter
@@ -18,13 +16,13 @@ public class AccountRepository {
                 .toList();
 
         Object pix;
-        for (var p : pix) {
+        for (var p : pixInUse) {
             if (pixInUse.contains(p)) {
                 throw new PixInUseException("A chave PIX " + p + " já está em uso.");
             }
         }
 
-        var newAccount = new AccountWallet(pix);
+        var newAccount = new AccountWallet(pixInUse);
         accounts.add(newAccount);
         return newAccount;
     }
@@ -60,7 +58,7 @@ public class AccountRepository {
     }
 
     public List<AccountWallet> list() {
-        return new ArrayList<>(this.accounts);
+        return new ArrayList<>(AccountRepository.accounts);
     }
 
     private void checkFundsForTransaction(AccountWallet account, long amount) {
