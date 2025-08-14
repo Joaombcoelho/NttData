@@ -1,12 +1,24 @@
 package br.com.dio.model;
 
-public record Investment(
-        long id,
-        long tax,
-        long initialFunds) {
+public class Investment {
+    private long amount;
+    private double tax;
 
-    public void voidInvestment(long nextId, double tax, long initialFunds) {
-
+    public Investment(long amount, double tax) {
+        this.amount = amount;
+        this.tax = tax;
     }
 
+    public long getAmount() {
+        return amount;
+    }
+
+    public double getTax() {
+        return tax;
+    }
+
+    @Override
+    public String toString() {
+        return "Investment{amount=" + amount + ", tax=" + tax + "%}";
+    }
 }

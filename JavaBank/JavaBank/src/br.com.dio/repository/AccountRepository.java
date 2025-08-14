@@ -69,26 +69,26 @@ public class AccountRepository {
 
     public void createAccount() {
 
-        throw new UnsupportedOperationException("Unimplemented method 'createAccount'");
+        throw new UnsupportedOperationException("Não foi possivel criar a conta");
     }
 
     public void deposit() {
 
-        throw new UnsupportedOperationException("Unimplemented method 'deposit'");
+        throw new UnsupportedOperationException("Não foi possivel realizar o depósito");
     }
 
     public void withdraw() {
 
-        throw new UnsupportedOperationException("Unimplemented method 'withdraw'");
+        throw new UnsupportedOperationException("Não foi possivel realizar o saque");
     }
 
     public void transferToAccount() {
 
-        throw new UnsupportedOperationException("Unimplemented method 'transferToAccount'");
+        throw new UnsupportedOperationException("Não foi possivel realizar a transferência");
     }
 
     public void checkHistory() {
 
-        throw new UnsupportedOperationException("Unimplemented method 'checkHistory'");
+        throw new UnsupportedOperationException("Não foi possivel consultar o histórico");
     }
 }

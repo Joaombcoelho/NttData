@@ -1,9 +1,9 @@
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 import javax.management.InstanceNotFoundException;
+
 import br.com.dio.model.AccountWallet;
 import br.com.dio.model.Investment;
 import br.com.dio.model.InvestmentWallet;
@@ -60,7 +60,7 @@ public class InvestmentRepository {
 
     private void checkFundsForTransaction() {
 
-        throw new UnsupportedOperationException("Unimplemented method 'checkFundsForTransaction'");
+        throw new UnsupportedOperationException("A transação não pode ser realizada, fundos insuficientes");
     }
 
     public void updateAmount(final long percent) {
@@ -88,37 +88,37 @@ public class InvestmentRepository {
 
     public void updateAmount() {
 
-        throw new InvestmentNotFoundsException("Unimplemented method 'updateAmount'");
+        throw new InvestmentNotFoundsException("Não foi possível atualizar o valor do investimento");
     }
 
     public void createInvestment(Scanner scanner) {
 
-        throw new InvestmentNotFoundsException("Unimplemented method 'createInvestment'");
+        throw new InvestmentNotFoundsException("Não foi possível criar o investimento");
     }
 
     public void createWalletInvestment() {
 
-        throw new UnsupportedOperationException("Unimplemented method 'createwalletInvestment'");
+        throw new UnsupportedOperationException("Não foi possível criar a carteira de investimento");
     }
 
     public void makeInvestment() {
 
-        throw new UnsupportedOperationException("Unimplemented method 'makeInvestment'");
+        throw new UnsupportedOperationException("Não foi possível realizar o investimento");
     }
 
     public void invest() {
 
-        throw new UnsupportedOperationException("Unimplemented method 'invest'");
+        throw new UnsupportedOperationException("Não foi possível investir");
     }
 
     public void withdrawInvestment() {
 
-        throw new UnsupportedOperationException("Unimplemented method 'withdrawInvestment'");
+        throw new UnsupportedOperationException("Não foi possível realizar o saque do investimento");
     }
 
     public static Investment create(double tax, long initialFunds) {
 
-        throw new UnsupportedOperationException("Unimplemented method 'create'");
+        throw new UnsupportedOperationException("Não foi possível criar o investimento");
     }
 
     // public static Investment create(List<String> tax, long initialFunds) {

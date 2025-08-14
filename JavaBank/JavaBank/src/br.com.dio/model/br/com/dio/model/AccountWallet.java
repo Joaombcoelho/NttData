@@ -64,31 +64,31 @@ public class AccountWallet extends Wallet {
     @Override
     public BankService getService() {
 
-        throw new UnsupportedOperationException("Unimplemented method 'getService'");
+        throw new UnsupportedOperationException("Não foi possivel recuperar o tipo de serviço");
     }
 
     public List getPix() {
 
-        throw new UnsupportedOperationException("Unimplemented method 'getPix'");
+        throw new UnsupportedOperationException("Não foi possivel recuperar a chave pix");
     }
 
     public long getBalance() {
 
-        throw new UnsupportedOperationException("Unimplemented method 'getBalance'");
+        throw new UnsupportedOperationException("Não foi possivel recuperar o saldo");
     }
 
     public boolean transfer(AccountWallet targetAccount, long amount) {
 
-        throw new UnsupportedOperationException("Unimplemented method 'transfer'");
+        throw new UnsupportedOperationException("Não foi possivel realizar a transferência");
     }
 
     public void deposit(long amount) {
 
-        throw new UnsupportedOperationException("Unimplemented method 'deposit'");
+        throw new UnsupportedOperationException("Não foi possivel realizar o depósito");
     }
 
     public boolean withdraw(long amount) {
 
-        throw new UnsupportedOperationException("Unimplemented method 'withdraw'");
+        throw new UnsupportedOperationException("Não foi possivel realizar o saque");
     }
 }
