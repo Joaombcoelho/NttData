@@ -120,9 +120,4 @@ public class InvestmentRepository {
 
         throw new UnsupportedOperationException("Não foi possível criar o investimento");
     }
-
-    // public static Investment create(List<String> tax, long initialFunds) {
-
-    // throw new UnsupportedOperationException("Unimplemented method 'create'");
-    // }
 }
