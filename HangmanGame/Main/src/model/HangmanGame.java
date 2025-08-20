@@ -89,24 +89,24 @@ public class HangmanGame {
     }
 
     private List<HangmanChar> buildHangmanPathsPosition() {
-        final var HEAD_LINE = 2;
-        final var BODY_LINE = 4;
-        final var LEGS_LINE = 5;
+        final var HEAD_LINE = 4;
+        final var BODY_LINE = 6;
+        final var LEGS_LINE = 7;
 
         return new ArrayList<>(
                 List.of(
-                        new HangmanChar('0', this.linesize * HEAD_LINE + 3),
-                        new HangmanChar('|', this.linesize * BODY_LINE + 3),
-                        new HangmanChar('/', this.linesize * BODY_LINE + 2),
-                        new HangmanChar('\\', this.linesize * BODY_LINE + 4),
-                        new HangmanChar('/', this.linesize * LEGS_LINE + 2),
-                        new HangmanChar('\\', this.linesize * LEGS_LINE + 4)
+                        new HangmanChar('0', this.linesize * HEAD_LINE + 4),
+                        new HangmanChar('|', this.linesize * BODY_LINE + 2),
+                        new HangmanChar('/', this.linesize * BODY_LINE + 1),
+                        new HangmanChar('\\', this.linesize * BODY_LINE + 3),
+                        new HangmanChar('/', this.linesize * LEGS_LINE + 9),
+                        new HangmanChar('\\', this.linesize * LEGS_LINE + 11)
                 )
         );
     }
 
     private List<HangmanChar> setCharacterSpacesPositionInGame(final List<HangmanChar> characters) {
-        final var LINE_LETTER = 6;
+        final var LINE_LETTER = 9;
         for (int i = 0; i < characters.size(); i++) {
             characters.get(i).setPosition(this.linesize * LINE_LETTER + HANGMAN_INITIAL_LINE_LENGTH + i);
         }
@@ -124,12 +124,12 @@ public class HangmanGame {
     }
 
     private void buildHangmanDesign(final String whiteSpace, final String charactersSpace) {
-        hangman = "  ---- " + whiteSpace + System.lineSeparator() +
-                  "|    | " + whiteSpace + System.lineSeparator() +
-                  "|      " + whiteSpace + System.lineSeparator() +
-                  "|      " + whiteSpace + System.lineSeparator() +
-                  "|      " + whiteSpace + System.lineSeparator() +
-                  "|      " + whiteSpace + System.lineSeparator() +
-                  "=======" + charactersSpace + System.lineSeparator();
+        hangman = "  ------- " + whiteSpace + System.lineSeparator() +
+                  "|       | " + whiteSpace + System.lineSeparator() +
+                  "|         " + whiteSpace + System.lineSeparator() +
+                  "|         " + whiteSpace + System.lineSeparator() +
+                  "|         " + whiteSpace + System.lineSeparator() +
+                  "|         " + whiteSpace + System.lineSeparator() +
+                  "=======   " + charactersSpace + System.lineSeparator();
     }
 }
