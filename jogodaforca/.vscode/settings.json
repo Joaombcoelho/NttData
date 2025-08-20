@@ -1,0 +1,41 @@
+{
+    "java.completion.favoriteStaticMembers": [
+        "org.junit.Assert.*",
+        "org.junit.Assume.*",
+        "org.junit.jupiter.api.Assertions.*",
+        "org.junit.jupiter.api.Assumptions.*",
+        "org.junit.jupiter.api.DynamicContainer.*",
+        "org.junit.jupiter.api.DynamicTest.*",
+        "org.mockito.Mockito.*",
+        "org.mockito.ArgumentMatchers.*",
+        "org.mockito.Answers.*"
+    ],
+    "java.configuration.updateBuildConfiguration": "interactive"{
+        "java.project.referencedLibraries": [
+            "lib/**/*.jar"
+        ]
+    },
+    "java.debug.settings.hotCodeReplace": "auto",
+    "java.debug.settings.console": "internalConsole",
+    "java.debug.settings.onBuildFailure": "continue",
+    "java.debug.settings.showHexInDebugger": true,
+    "java.debug.settings.showStaticFieldValues": true,
+    "java.debug.settings.showSyntheticVariables": true,
+    "java.debug.settings.showMethodReturnValues": true,
+    "java.debug.settings.showLocalVariables": true,
+    "java.debug.settings.showExceptionMessages": true,
+    "java.debug.settings.showExceptionStackTraces": true,
+    "java.debug.settings.showExceptionCause": true,
+    "java.debug.settings.showExceptionSuppressed": true,
+    "java.debug.settings.showExceptionStackFrames": true,
+    "java.debug.settings.showExceptionSource": true,
+    "java.debug.settings.showExceptionLineNumber": true,
+    "java.debug.settings.showExceptionColumnNumber": true,
+    "type": "java",
+    "name": "Debug Forca",
+    "request": "launch",
+    "mainClass": "br.com.dio.hangman.Main",
+    "args": [
+        "PROGRAMACAO"
+    ]
+}
